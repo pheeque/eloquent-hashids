@@ -18,6 +18,8 @@ class TestCase extends Orchestra
         $this->withFactories(__DIR__.'/database/factories');
 
         $this->app['config']->set('hashids', require 'config/hashids.php');
+
+        $this->artisan('migrate');
     }
 
     protected function getPackageProviders($app)
